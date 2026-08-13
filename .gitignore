@@ -2,4 +2,8 @@ node_modules
 dist
 .vercel
 .DS_Store
-.env*
+
+# Secrets — never commit
+.env
+.env.*
+!.env.example

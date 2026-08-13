@@ -13,14 +13,30 @@ siteNav.addEventListener('click', (event) => {
   }
 });
 
-const joinForm = document.getElementById('joinForm');
-const joinNote = document.getElementById('joinNote');
+// The lightbox only exists on pages that have the photo wall.
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightboxImg');
+const lightboxClose = document.getElementById('lightboxClose');
 
-joinForm.addEventListener('submit', (event) => {
-  event.preventDefault();
-  const email = document.getElementById('email').value.trim();
-  if (!email) return;
+if (lightbox && lightboxImg && lightboxClose) {
+  const closeLightbox = () => {
+    lightbox.hidden = true;
+    lightboxImg.removeAttribute('src');
+  };
 
-  joinNote.textContent = `You're on the list — we'll email ${email} before the next session.`;
-  joinForm.reset();
-});
+  document.querySelectorAll('.wall-item img').forEach((img) => {
+    img.addEventListener('click', () => {
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt;
+      lightbox.hidden = false;
+    });
+  });
+
+  lightboxClose.addEventListener('click', closeLightbox);
+  lightbox.addEventListener('click', (event) => {
+    if (event.target === lightbox) closeLightbox();
+  });
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && !lightbox.hidden) closeLightbox();
+  });
+}

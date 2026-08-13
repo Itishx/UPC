@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin — Unplug Collective</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;1,400&family=Work+Sans:wght@400;500;600&family=Noto+Serif+Devanagari:wght@500;600&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/admin.css">
+</head>
+<body class="admin-body">
+
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <symbol id="ucMark" viewBox="0 0 210 110" width="210" height="110">
+      <text x="0" y="88" font-family="'Newsreader', serif" font-weight="600" font-size="96" fill="currentColor">U</text>
+      <text x="66" y="88" font-family="'Noto Serif Devanagari', serif" font-weight="600" font-size="90" fill="currentColor">क</text>
+      <rect x="63" y="34" width="28" height="9" fill="currentColor"></rect>
+      <circle cx="188" cy="96" r="7.5" fill="currentColor"></circle>
+    </symbol>
+  </defs>
+</svg>
+
+<!-- Password gate -->
+<div class="gate" id="gate">
+  <form class="gate-card" id="gateForm">
+    <svg viewBox="0 0 210 110" class="gate-mark" aria-hidden="true"><use href="#ucMark"></use></svg>
+    <p class="gate-eyebrow">Unplug Collective — Admin</p>
+    <label class="field-label" for="gateAnswer">Who is the best?</label>
+    <input type="password" id="gateAnswer" autocomplete="off" placeholder="Your answer" required>
+    <button type="submit" class="btn btn-primary" id="gateSubmit">Unlock</button>
+    <p class="gate-error" id="gateError" role="status" aria-live="polite"></p>
+  </form>
+</div>
+
+<!-- Dashboard -->
+<div class="admin" id="admin" hidden>
+
+  <header class="admin-header">
+    <div class="admin-header-inner">
+      <a class="brand" href="/">
+        <svg viewBox="0 0 210 110" class="brand-mark" aria-hidden="true"><use href="#ucMark"></use></svg>
+        <span>Admin</span>
+      </a>
+      <div class="admin-header-right">
+        <label class="sr-only" for="volFilter">Filter by volume</label>
+        <select id="volFilter"></select>
+        <button class="btn btn-ghost btn-sm" id="exportCsv">Export CSV</button>
+        <button class="btn btn-ghost btn-sm" id="refreshBtn">Refresh</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="admin-main">
+
+    <!-- KPI row -->
+    <section class="kpi-row" id="kpiRow"></section>
+
+    <!-- Charts -->
+    <section class="admin-grid">
+      <div class="panel panel-wide">
+        <div class="panel-head">
+          <h2>Registrations by volume</h2>
+          <p>Bookings per session, split by performers and listeners.</p>
+        </div>
+        <div class="chart" id="chartVolumes"></div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-head">
+          <h2>Revenue by volume</h2>
+          <p>Expected vs collected.</p>
+        </div>
+        <div class="chart" id="chartRevenue"></div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-head">
+          <h2>Performer / Listener split</h2>
+          <p>Current filter.</p>
+        </div>
+        <div class="chart chart-center" id="chartSplit"></div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-head">
+          <h2>Age distribution</h2>
+          <p>Who's actually in the room.</p>
+        </div>
+        <div class="chart" id="chartAge"></div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-head">
+          <h2>Payment status</h2>
+          <p>Paid, pending, refunded.</p>
+        </div>
+        <div class="chart" id="chartPayment"></div>
+      </div>
+    </section>
+
+    <!-- Volume comparison -->
+    <section class="panel">
+      <div class="panel-head">
+        <h2>Volume comparison</h2>
+        <p>Every session side by side, newest first. Growth is versus the previous volume.</p>
+      </div>
+      <div class="table-scroll">
+        <table class="data-table" id="volumeTable"></table>
+      </div>
+    </section>
+
+    <!-- Registrations -->
+    <section class="panel">
+      <div class="panel-head panel-head-row">
+        <div>
+          <h2>Registrations</h2>
+          <p id="tableCount">—</p>
+        </div>
+        <input type="search" id="searchInput" placeholder="Search name, phone, handle…">
+      </div>
+      <div class="table-scroll">
+        <table class="data-table" id="regTable"></table>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<script type="module" src="/src/admin.js"></script>
+</body>
+</html>

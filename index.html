@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Unplugged Collective — No rules. No filters. Just music.</title>
-<meta name="description" content="Unplugged Collective is a community of open mics, songwriters' circles, and living-room-style acoustic sessions. Bring a song, or just bring yourself.">
+<title>Unplug Collective — No rules. No filters. Just music.</title>
+<meta name="description" content="Unplug Collective is a community of open mics, songwriters' circles, and living-room-style acoustic sessions. Bring a song, or just bring yourself.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;1,400&family=Work+Sans:wght@400;500;600&family=Noto+Serif+Devanagari:wght@500;600&display=swap" rel="stylesheet">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -15,7 +15,7 @@
 <!-- Shared logo mark, referenced everywhere via <use> -->
 <svg width="0" height="0" style="position:absolute">
   <defs>
-    <symbol id="ucMark" viewBox="0 0 210 110">
+    <symbol id="ucMark" viewBox="0 0 210 110" width="210" height="110">
       <text x="0" y="88" font-family="'Newsreader', serif" font-weight="600" font-size="96" fill="currentColor">U</text>
       <text x="66" y="88" font-family="'Noto Serif Devanagari', serif" font-weight="600" font-size="90" fill="currentColor">क</text>
       <rect x="63" y="34" width="28" height="9" fill="currentColor"></rect>
@@ -31,7 +31,7 @@
   <div class="wrap header-inner">
     <a class="brand" href="#top">
       <svg viewBox="0 0 210 110" class="brand-mark" aria-hidden="true"><use href="#ucMark"></use></svg>
-      <span>Unplugged Collective</span>
+      <span>Unplug Collective</span>
     </a>
     <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="siteNav">
       <span class="sr-only">Menu</span>
@@ -43,9 +43,10 @@
     </button>
     <nav class="site-nav" id="siteNav" aria-label="Primary">
       <a href="#sessions">Sessions</a>
-      <a href="#how-it-works">How it works</a>
-      <a href="#community">Community</a>
-      <a href="#join" class="nav-cta">Join a session</a>
+      <a href="#about">About</a>
+      <a href="#wall">The Wall</a>
+      <a href="blog.html">Blog</a>
+      <a href="#register" class="nav-cta">Book a spot</a>
     </nav>
   </div>
 </header>
@@ -54,6 +55,8 @@
 
   <!-- Hero -->
   <section id="top" class="hero">
+    <img class="hero-photo" src="images/main1.jpg" alt="The Unplug Collective community gathered together, holding a sign with the collective's mark" loading="eager">
+    <div class="hero-scrim"></div>
     <div class="wrap hero-inner">
       <svg viewBox="0 0 360 360" class="hero-seal" aria-hidden="true">
         <circle cx="180" cy="180" r="138" fill="none" stroke="currentColor" stroke-width="2"></circle>
@@ -61,13 +64,13 @@
         <text font-family="'Work Sans',sans-serif" font-size="15.5" font-weight="600" letter-spacing="4.5" fill="currentColor">
           <textPath href="#tagArc" startOffset="50%" text-anchor="middle">NO RULES · NO FILTERS · JUST MUSIC</textPath>
         </text>
-        <g transform="translate(75,150) scale(1.05)"><use href="#ucMark"></use></g>
+        <use href="#ucMark" width="105" height="55" x="127.5" y="147"></use>
       </svg>
       <h1>A living room<br>with better acoustics.</h1>
-      <p class="hero-sub">Unplugged Collective is a community of open mics, songwriters' circles, and acoustic sessions. No setlist required — bring a song, or just bring yourself.</p>
+      <p class="hero-sub">Unplug Collective is a community of open mics, songwriters' circles, and acoustic sessions. No setlist required — bring a song, or just bring yourself.</p>
       <div class="hero-actions">
-        <a href="#sessions" class="btn btn-primary">See upcoming sessions</a>
-        <a href="#join" class="btn btn-ghost">Get on the list</a>
+        <a href="#register" class="btn btn-primary">Book your spot</a>
+        <a href="#sessions" class="btn btn-ghost">See the next session</a>
       </div>
     </div>
   </section>
@@ -84,44 +87,41 @@
   <section id="sessions" class="sessions">
     <div class="wrap">
       <div class="section-head">
-        <h2>Upcoming sessions</h2>
-        <p>Every slot is fifteen minutes, unplugged. Sign-ups open thirty minutes before the first set.</p>
+        <h2>Upcoming session</h2>
+        <p>One room, one evening, however many songs it takes. Book your spot below — performer or listener.</p>
       </div>
 
-      <div class="session-grid">
+      <div class="ticket">
+        <div class="ticket-stub">
+          <p class="ticket-vol-label">Volume</p>
+          <p class="ticket-vol-num">06</p>
+          <p class="ticket-stub-foot">No rules · No filters · Just music</p>
+        </div>
 
-        <article class="session-card">
-          <p class="session-date">THU · SEP 04</p>
-          <h3>Weekly Open Mic</h3>
-          <p class="session-meta">7:00 PM &middot; The Back Room, Downtown</p>
-          <p class="session-desc">The regular Thursday gathering. All instruments, all skill levels, one mic and a stool.</p>
-          <a href="#join" class="session-link">Reserve a slot &rarr;</a>
-        </article>
+        <div class="ticket-body">
+          <div class="ticket-head">
+            <div>
+              <p class="ticket-eyebrow">Next session</p>
+              <h3>Unplug Collective</h3>
+            </div>
+            <p class="ticket-date"><span class="ticket-day">23</span><span class="ticket-suffix">rd</span></p>
+          </div>
 
-        <article class="session-card">
-          <p class="session-date">SUN · SEP 14</p>
-          <h3>Songwriters' Circle</h3>
-          <p class="session-meta">4:00 PM &middot; Maple House Porch</p>
-          <p class="session-desc">Share a work-in-progress, get gentle feedback, hear how the same song sounds four different ways.</p>
-          <a href="#join" class="session-link">Reserve a slot &rarr;</a>
-        </article>
+          <p class="ticket-desc">Our sixth gathering. Acoustic sets, open ears, and a room that actually listens. Performers get a slot on the mic; listeners get the best seat in the house.</p>
 
-        <article class="session-card">
-          <p class="session-date">FRI · SEP 26</p>
-          <h3>Unplugged Sessions: Showcase</h3>
-          <p class="session-meta">8:00 PM &middot; Green Room Studio</p>
-          <p class="session-desc">A quieter, listening-room set for folks who've played with us before. Recorded, on request only.</p>
-          <a href="#join" class="session-link">Reserve a slot &rarr;</a>
-        </article>
+          <div class="ticket-tiers">
+            <div class="ticket-tier">
+              <span class="tier-name">Perform</span>
+              <span class="tier-price">&#8377;299</span>
+            </div>
+            <div class="ticket-tier">
+              <span class="tier-name">Listen</span>
+              <span class="tier-price">&#8377;199</span>
+            </div>
+          </div>
 
-        <article class="session-card">
-          <p class="session-date">SUN · OCT 05</p>
-          <h3>Sunday Hums</h3>
-          <p class="session-meta">2:00 PM &middot; Riverside Park (weather permitting)</p>
-          <p class="session-desc">No sign-up sheet, no mic — just an afternoon jam. Bring an instrument or just your voice.</p>
-          <a href="#join" class="session-link">Reserve a slot &rarr;</a>
-        </article>
-
+          <a href="#register" class="btn btn-primary ticket-cta">Book your spot</a>
+        </div>
       </div>
     </div>
   </section>
@@ -154,65 +154,201 @@
     </div>
   </section>
 
-  <!-- Community -->
-  <section id="community" class="community">
-    <div class="wrap">
-      <div class="section-head">
-        <h2>Built by the room, not for it</h2>
-        <p>Unplugged Collective started as four friends and a borrowed mic stand. It's grown into a rotating cast of regulars, first-timers, and people who just came to listen — but the rule hasn't changed.</p>
+  <!-- About -->
+  <section id="about" class="about">
+    <div class="wrap about-inner">
+      <p class="about-eyebrow">About</p>
+      <h2>Unplug Collective</h2>
+      <p class="about-lead">Unplug Collective is a community built around one simple idea: <em>music deserves to be heard.</em></p>
+      <p class="about-body">We create intimate spaces where musicians perform authentically, listeners genuinely listen, and meaningful connections happen through live music.</p>
+      <div class="about-nos">
+        <span>No competitions.</span>
+        <span>No distractions.</span>
+        <span>No filters.</span>
       </div>
-      <div class="community-grid">
-        <div class="community-card">
-          <p class="community-figure">120+</p>
-          <p class="community-label">Musicians who've taken the mic</p>
-        </div>
-        <div class="community-card">
-          <p class="community-figure">3</p>
-          <p class="community-label">Cities with a regular session</p>
-        </div>
-        <div class="community-card">
-          <p class="community-figure">Every week</p>
-          <p class="community-label">Since the first Thursday in 2022</p>
-        </div>
-      </div>
+      <p class="about-just">Just music.</p>
     </div>
   </section>
 
-  <!-- Join -->
-  <section id="join" class="join">
-    <div class="wrap join-inner">
-      <h2>Get a seat saved for you</h2>
-      <p>Join the list and we'll send the next session's time, place, and sign-up window — usually a few days out, never more than a week.</p>
-      <form class="join-form" id="joinForm">
-        <label class="sr-only" for="email">Email address</label>
-        <input type="email" id="email" name="email" placeholder="you@example.com" required>
-        <button type="submit" class="btn btn-primary">Join the list</button>
+  <!-- The Wall (photo gallery) -->
+  <section id="wall" class="wall-section">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>The Wall</h2>
+        <p>No press kit, no photographer on retainer — just phones in pockets and whoever remembered to take one out. Click a photo for a closer look.</p>
+      </div>
+    </div>
+    <div class="wall wrap">
+      <figure class="wall-item wall-r1"><img src="images/gallery-01.jpg" alt="Musician playing acoustic guitar and singing into a microphone" loading="lazy"><figcaption>Solo, unplugged, no setlist.</figcaption></figure>
+      <figure class="wall-item wall-r2"><img src="images/gallery-02.jpg" alt="Musician in a white shirt playing acoustic guitar" loading="lazy"><figcaption>Every song sounds better with the room this quiet.</figcaption></figure>
+      <figure class="wall-item wall-r3"><img src="images/gallery-03.jpg" alt="Musician playing guitar at night as someone walks past" loading="lazy"><figcaption>Between songs, the room holds its breath.</figcaption></figure>
+      <figure class="wall-item wall-r1"><img src="images/gallery-04.jpg" alt="Musician mid-sentence, smiling, holding a guitar" loading="lazy"><figcaption>Mid-story, before the next song.</figcaption></figure>
+      <figure class="wall-item wall-r2"><img src="images/gallery-05.jpg" alt="A speaker addressing the room with a microphone" loading="lazy"><figcaption>Talking the room through it.</figcaption></figure>
+      <figure class="wall-item wall-r3"><img src="images/gallery-06.jpg" alt="A guitarist and singer performing together on a staircase" loading="lazy"><figcaption>Two voices finding the same key.</figcaption></figure>
+      <figure class="wall-item wall-r1"><img src="images/gallery-07.jpg" alt="A singer performing solo beneath a spiral staircase" loading="lazy"><figcaption>First time on this mic, first time in this room.</figcaption></figure>
+      <figure class="wall-item wall-r2"><img src="images/gallery-08.jpg" alt="Two guitarists playing side by side next to a bookshelf" loading="lazy"><figcaption>Trading verses, side by side.</figcaption></figure>
+      <figure class="wall-item wall-r3"><img src="images/gallery-09.jpg" alt="A singer performing with lyrics on a phone screen nearby" loading="lazy"><figcaption>Lyrics on a phone, heart in the room.</figcaption></figure>
+      <figure class="wall-item wall-r1"><img src="images/gallery-10.jpg" alt="A musician singing closely into a microphone while playing guitar" loading="lazy"><figcaption>Old song, new room.</figcaption></figure>
+      <figure class="wall-item wall-r2"><img src="images/gallery-11.jpg" alt="A musician laughing mid-song while playing guitar" loading="lazy"><figcaption>The best part is always the laugh before the chorus.</figcaption></figure>
+      <figure class="wall-item wall-r3"><img src="images/gallery-12.jpg" alt="A musician playing a bansuri flute" loading="lazy"><figcaption>A bansuri between the guitars.</figcaption></figure>
+      <figure class="wall-item wall-r1"><img src="images/gallery-13.jpg" alt="Two musicians harmonizing into one microphone" loading="lazy"><figcaption>Harmonizing off one mic, the old-fashioned way.</figcaption></figure>
+      <figure class="wall-item wall-r2"><img src="images/gallery-14.jpg" alt="Two musicians backstage near the Unplug Collective sign" loading="lazy"><figcaption>Backstage, before the next set.</figcaption></figure>
+    </div>
+  </section>
+
+  <!-- Register -->
+  <section id="register" class="register">
+    <div class="wrap register-inner">
+      <div class="section-head register-head">
+        <h2>Book your spot</h2>
+        <p>Volume 6 &middot; 23rd. Pick how you're joining us, tell us who you are, and we'll save you a seat.</p>
+      </div>
+
+      <form id="registerForm" novalidate>
+        <!-- Tier choice -->
+        <fieldset class="tier-fieldset">
+          <legend class="field-label">How will you be joining?</legend>
+          <div class="tier-cards">
+            <label class="tier-card" for="tierPerformer">
+              <input type="radio" name="tier" id="tierPerformer" value="performer" required>
+              <span class="tier-card-inner">
+                <span class="tier-card-top">
+                  <span class="tier-card-name">Performer</span>
+                  <span class="tier-card-check" aria-hidden="true"></span>
+                </span>
+                <span class="tier-card-price">&#8377;299</span>
+                <span class="tier-card-desc">A slot on the mic. Bring two or three songs &mdash; covers, originals, or something half-finished.</span>
+                <span class="tier-card-perks">
+                  <span>&middot; 15-minute set</span>
+                  <span>&middot; Sound check before doors</span>
+                  <span>&middot; Photos from the night</span>
+                </span>
+              </span>
+            </label>
+
+            <label class="tier-card" for="tierListener">
+              <input type="radio" name="tier" id="tierListener" value="listener" required>
+              <span class="tier-card-inner">
+                <span class="tier-card-top">
+                  <span class="tier-card-name">Listener</span>
+                  <span class="tier-card-check" aria-hidden="true"></span>
+                </span>
+                <span class="tier-card-price">&#8377;199</span>
+                <span class="tier-card-desc">The best seat in the house. Come for the room, stay for whoever gets up next.</span>
+                <span class="tier-card-perks">
+                  <span>&middot; Entry to the full session</span>
+                  <span>&middot; Reserved seating</span>
+                  <span>&middot; No phones, no filters</span>
+                </span>
+              </span>
+            </label>
+          </div>
+        </fieldset>
+
+        <!-- Details -->
+        <div class="field-grid">
+          <div class="field">
+            <label class="field-label" for="fullName">Full name</label>
+            <input type="text" id="fullName" name="fullName" placeholder="Your name" required>
+          </div>
+
+          <div class="field">
+            <label class="field-label" for="age">Age</label>
+            <input type="number" id="age" name="age" min="10" max="100" placeholder="21" required>
+          </div>
+
+          <div class="field">
+            <label class="field-label" for="phone">Phone number</label>
+            <input type="tel" id="phone" name="phone" inputmode="numeric" maxlength="10" placeholder="10-digit number" required>
+          </div>
+
+          <div class="field">
+            <label class="field-label" for="instagram">Instagram handle</label>
+            <div class="input-prefix">
+              <span>@</span>
+              <input type="text" id="instagram" name="instagram" placeholder="yourhandle" required>
+            </div>
+          </div>
+        </div>
+
+        <div class="register-actions">
+          <button type="submit" class="btn btn-primary" id="registerSubmit">Confirm booking</button>
+          <p class="register-total" id="registerTotal">Select an option above</p>
+        </div>
+
+        <p class="form-note" id="formNote" role="status" aria-live="polite"></p>
       </form>
-      <p class="join-note" id="joinNote" role="status" aria-live="polite"></p>
     </div>
   </section>
 
 </main>
 
 <footer class="site-footer">
-  <div class="wrap footer-inner">
-    <div class="footer-brand">
-      <svg viewBox="0 0 210 110" class="footer-mark" aria-hidden="true"><use href="#ucMark"></use></svg>
+  <img class="footer-photo" src="images/main2.jpg" alt="The Unplug Collective community gathered on a staircase" loading="lazy">
+  <div class="footer-scrim"></div>
+  <div class="wrap">
+    <div class="footer-top">
       <div>
-        <p class="footer-name">Unplugged Collective</p>
-        <p class="footer-tag">No rules · No filters · Just music</p>
+        <h2>Music deserves to be heard.</h2>
+        <p>Come play, or come listen. Either way, there's a seat saved for you.</p>
+      </div>
+      <a href="#register" class="btn btn-primary">Book your spot</a>
+    </div>
+
+    <div class="footer-cols">
+      <div class="footer-col footer-about">
+        <div class="footer-brand">
+          <svg viewBox="0 0 210 110" class="footer-mark" aria-hidden="true"><use href="#ucMark"></use></svg>
+          <p class="footer-name">Unplug Collective</p>
+        </div>
+        <p>Intimate spaces where musicians perform authentically and listeners genuinely listen. No competitions. No distractions. No filters.</p>
+      </div>
+
+      <div class="footer-col">
+        <h3>Explore</h3>
+        <a href="#sessions">Sessions</a>
+        <a href="#how-it-works">How it works</a>
+        <a href="#wall">The Wall</a>
+        <a href="#about">About</a>
+      </div>
+
+      <div class="footer-col">
+        <h3>Take part</h3>
+        <a href="#register">Book a spot</a>
+        <a href="#register">Perform &mdash; &#8377;299</a>
+        <a href="#register">Listen &mdash; &#8377;199</a>
+        <a href="blog.html">Blog</a>
+      </div>
+
+      <div class="footer-col">
+        <h3>Connect</h3>
+        <a href="https://instagram.com/unplugcollective" target="_blank" rel="noopener">Instagram</a>
+        <a href="mailto:hello@unplugcollective.in">hello@unplugcollective.in</a>
+        <a href="admin.html">Admin</a>
       </div>
     </div>
-    <div class="footer-links">
-      <a href="#sessions">Sessions</a>
-      <a href="#how-it-works">How it works</a>
-      <a href="#community">Community</a>
-      <a href="mailto:hello@unpluggedcollective.example">hello@unpluggedcollective.example</a>
+
+    <div class="footer-bottom">
+      <p class="footer-copy">&copy; 2026 Unplug Collective. All rights reserved.</p>
+      <div class="footer-social">
+        <a href="https://instagram.com/unplugcollective" target="_blank" rel="noopener">Instagram</a>
+        <a href="mailto:hello@unplugcollective.in">Email</a>
+      </div>
     </div>
   </div>
-  <p class="footer-copy">&copy; 2026 Unplugged Collective. A living room with better acoustics.</p>
+
+  <svg class="footer-wordmark" viewBox="0 0 100 47" preserveAspectRatio="xMidYMax meet" aria-hidden="true">
+    <text x="50" y="21" text-anchor="middle" textLength="97" lengthAdjust="spacing">Unplug</text>
+    <text x="50" y="44" text-anchor="middle" textLength="97" lengthAdjust="spacing">Collective</text>
+  </svg>
 </footer>
 
+<div class="lightbox" id="lightbox" hidden>
+  <button class="lightbox-close" id="lightboxClose" aria-label="Close">&times;</button>
+  <img class="lightbox-img" id="lightboxImg" alt="">
+</div>
+
 <script src="script.js"></script>
+<script type="module" src="/src/register.js"></script>
 </body>
 </html>

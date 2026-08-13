@@ -1,5 +1,5 @@
 {
-  "name": "unplugged-collective",
+  "name": "unplug-collective",
   "private": true,
   "version": "1.0.0",
   "type": "module",
@@ -10,5 +10,8 @@
   },
   "devDependencies": {
     "vite": "^6.0.0"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.112.3"
   }
 }
