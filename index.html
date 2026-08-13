@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unplugged Collective — No rules. No filters. Just music.</title>
+<meta name="description" content="Unplugged Collective is a community of open mics, songwriters' circles, and living-room-style acoustic sessions. Bring a song, or just bring yourself.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;1,400&family=Work+Sans:wght@400;500;600&family=Noto+Serif+Devanagari:wght@500;600&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Shared logo mark, referenced everywhere via <use> -->
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <symbol id="ucMark" viewBox="0 0 210 110">
+      <text x="0" y="88" font-family="'Newsreader', serif" font-weight="600" font-size="96" fill="currentColor">U</text>
+      <text x="66" y="88" font-family="'Noto Serif Devanagari', serif" font-weight="600" font-size="90" fill="currentColor">क</text>
+      <rect x="63" y="34" width="28" height="9" fill="currentColor"></rect>
+      <circle cx="188" cy="96" r="7.5" fill="currentColor"></circle>
+    </symbol>
+    <path id="tagArc" d="M 42,180 A 138,138 0 0 1 318,180" fill="none"></path>
+  </defs>
+</svg>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="#top">
+      <svg viewBox="0 0 210 110" class="brand-mark" aria-hidden="true"><use href="#ucMark"></use></svg>
+      <span>Unplugged Collective</span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="siteNav">
+      <span class="sr-only">Menu</span>
+      <svg viewBox="0 0 24 18" width="24" height="18" aria-hidden="true">
+        <rect width="24" height="2" fill="currentColor"></rect>
+        <rect y="8" width="24" height="2" fill="currentColor"></rect>
+        <rect y="16" width="24" height="2" fill="currentColor"></rect>
+      </svg>
+    </button>
+    <nav class="site-nav" id="siteNav" aria-label="Primary">
+      <a href="#sessions">Sessions</a>
+      <a href="#how-it-works">How it works</a>
+      <a href="#community">Community</a>
+      <a href="#join" class="nav-cta">Join a session</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- Hero -->
+  <section id="top" class="hero">
+    <div class="wrap hero-inner">
+      <svg viewBox="0 0 360 360" class="hero-seal" aria-hidden="true">
+        <circle cx="180" cy="180" r="138" fill="none" stroke="currentColor" stroke-width="2"></circle>
+        <circle cx="180" cy="180" r="122" fill="none" stroke="currentColor" stroke-width="1"></circle>
+        <text font-family="'Work Sans',sans-serif" font-size="15.5" font-weight="600" letter-spacing="4.5" fill="currentColor">
+          <textPath href="#tagArc" startOffset="50%" text-anchor="middle">NO RULES · NO FILTERS · JUST MUSIC</textPath>
+        </text>
+        <g transform="translate(75,150) scale(1.05)"><use href="#ucMark"></use></g>
+      </svg>
+      <h1>A living room<br>with better acoustics.</h1>
+      <p class="hero-sub">Unplugged Collective is a community of open mics, songwriters' circles, and acoustic sessions. No setlist required — bring a song, or just bring yourself.</p>
+      <div class="hero-actions">
+        <a href="#sessions" class="btn btn-primary">See upcoming sessions</a>
+        <a href="#join" class="btn btn-ghost">Get on the list</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Voice / mission -->
+  <section class="voice">
+    <div class="wrap">
+      <p class="voice-quote">"Warm, intimate, unpolished. This is a seat saved for you — not a stage you have to earn."</p>
+      <p class="voice-attr">— the whole idea, in one breath</p>
+    </div>
+  </section>
+
+  <!-- Upcoming sessions -->
+  <section id="sessions" class="sessions">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Upcoming sessions</h2>
+        <p>Every slot is fifteen minutes, unplugged. Sign-ups open thirty minutes before the first set.</p>
+      </div>
+
+      <div class="session-grid">
+
+        <article class="session-card">
+          <p class="session-date">THU · SEP 04</p>
+          <h3>Weekly Open Mic</h3>
+          <p class="session-meta">7:00 PM &middot; The Back Room, Downtown</p>
+          <p class="session-desc">The regular Thursday gathering. All instruments, all skill levels, one mic and a stool.</p>
+          <a href="#join" class="session-link">Reserve a slot &rarr;</a>
+        </article>
+
+        <article class="session-card">
+          <p class="session-date">SUN · SEP 14</p>
+          <h3>Songwriters' Circle</h3>
+          <p class="session-meta">4:00 PM &middot; Maple House Porch</p>
+          <p class="session-desc">Share a work-in-progress, get gentle feedback, hear how the same song sounds four different ways.</p>
+          <a href="#join" class="session-link">Reserve a slot &rarr;</a>
+        </article>
+
+        <article class="session-card">
+          <p class="session-date">FRI · SEP 26</p>
+          <h3>Unplugged Sessions: Showcase</h3>
+          <p class="session-meta">8:00 PM &middot; Green Room Studio</p>
+          <p class="session-desc">A quieter, listening-room set for folks who've played with us before. Recorded, on request only.</p>
+          <a href="#join" class="session-link">Reserve a slot &rarr;</a>
+        </article>
+
+        <article class="session-card">
+          <p class="session-date">SUN · OCT 05</p>
+          <h3>Sunday Hums</h3>
+          <p class="session-meta">2:00 PM &middot; Riverside Park (weather permitting)</p>
+          <p class="session-desc">No sign-up sheet, no mic — just an afternoon jam. Bring an instrument or just your voice.</p>
+          <a href="#join" class="session-link">Reserve a slot &rarr;</a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section id="how-it-works" class="how">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>How it works</h2>
+        <p>No auditions. No door fee for performers. No filters on what "counts" as a song.</p>
+      </div>
+
+      <ol class="how-steps">
+        <li>
+          <span class="how-num">01</span>
+          <h3>Show up early</h3>
+          <p>Sign-ups open thirty minutes before the first set, first come first served. Solo, duo, or full band — whatever you've got.</p>
+        </li>
+        <li>
+          <span class="how-num">02</span>
+          <h3>Play fifteen minutes</h3>
+          <p>Two or three songs, unplugged. Covers, originals, half-finished ideas — all welcome on this stage.</p>
+        </li>
+        <li>
+          <span class="how-num">03</span>
+          <h3>Stay for the room</h3>
+          <p>The best part isn't your set, it's everyone else's. Most people stay long after their own turn is over.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Community -->
+  <section id="community" class="community">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Built by the room, not for it</h2>
+        <p>Unplugged Collective started as four friends and a borrowed mic stand. It's grown into a rotating cast of regulars, first-timers, and people who just came to listen — but the rule hasn't changed.</p>
+      </div>
+      <div class="community-grid">
+        <div class="community-card">
+          <p class="community-figure">120+</p>
+          <p class="community-label">Musicians who've taken the mic</p>
+        </div>
+        <div class="community-card">
+          <p class="community-figure">3</p>
+          <p class="community-label">Cities with a regular session</p>
+        </div>
+        <div class="community-card">
+          <p class="community-figure">Every week</p>
+          <p class="community-label">Since the first Thursday in 2022</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Join -->
+  <section id="join" class="join">
+    <div class="wrap join-inner">
+      <h2>Get a seat saved for you</h2>
+      <p>Join the list and we'll send the next session's time, place, and sign-up window — usually a few days out, never more than a week.</p>
+      <form class="join-form" id="joinForm">
+        <label class="sr-only" for="email">Email address</label>
+        <input type="email" id="email" name="email" placeholder="you@example.com" required>
+        <button type="submit" class="btn btn-primary">Join the list</button>
+      </form>
+      <p class="join-note" id="joinNote" role="status" aria-live="polite"></p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div class="footer-brand">
+      <svg viewBox="0 0 210 110" class="footer-mark" aria-hidden="true"><use href="#ucMark"></use></svg>
+      <div>
+        <p class="footer-name">Unplugged Collective</p>
+        <p class="footer-tag">No rules · No filters · Just music</p>
+      </div>
+    </div>
+    <div class="footer-links">
+      <a href="#sessions">Sessions</a>
+      <a href="#how-it-works">How it works</a>
+      <a href="#community">Community</a>
+      <a href="mailto:hello@unpluggedcollective.example">hello@unpluggedcollective.example</a>
+    </div>
+  </div>
+  <p class="footer-copy">&copy; 2026 Unplugged Collective. A living room with better acoustics.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
