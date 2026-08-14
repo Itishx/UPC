@@ -96,7 +96,7 @@ if (form) {
       form.innerHTML = `
         <div class="register-success">
           <p class="register-success-title">You're in, ${escapeHtml(fullName.split(' ')[0])}.</p>
-          <p>Seat saved for <strong>Volume ${session.volume_number}</strong> on the 23rd as a
+          <p>Seat saved for <strong>Volume ${session.volume_number}</strong> on the 22nd as a
              <strong>${tier.value}</strong>. We'll message you on
              <strong>${escapeHtml(phone)}</strong> with the venue and timings.</p>
           <p class="register-success-amount">Amount due at the door &mdash; &#8377;${PRICES[tier.value]}</p>

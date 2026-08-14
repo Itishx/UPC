@@ -147,5 +147,5 @@ values
   (3, 'Unplugged Collective — Volume 3', '2026-01-23', 'The Courtyard',     'Bengaluru', 50, false),
   (4, 'Unplugged Collective — Volume 4', '2026-03-23', 'The Courtyard',     'Bengaluru', 55, false),
   (5, 'Unplugged Collective — Volume 5', '2026-05-23', 'Maple House',       'Bengaluru', 60, false),
-  (6, 'Unplugged Collective — Volume 6', '2026-08-23', 'To be announced',   'Bengaluru', 60, true)
+  (6, 'Unplugged Collective — Volume 6', '2026-08-22', 'To be announced',   'Bengaluru', 60, true)
 on conflict (volume_number) do nothing;
