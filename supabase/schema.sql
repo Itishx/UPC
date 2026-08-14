@@ -1,4 +1,4 @@
--- Unplug Collective — database schema
+-- Unplugged Collective — database schema
 -- Run this in the Supabase SQL Editor (Dashboard → SQL Editor → New query → Run).
 
 -- ---------------------------------------------------------------------------
@@ -19,7 +19,7 @@ create table if not exists public.sessions (
   created_at      timestamptz not null default now()
 );
 
-comment on table public.sessions is 'One row per Unplug Collective event (Volume 1, 2, 3 ...)';
+comment on table public.sessions is 'One row per Unplugged Collective event (Volume 1, 2, 3 ...)';
 
 -- ---------------------------------------------------------------------------
 -- Registrations (one row per booking)
@@ -142,10 +142,10 @@ order by s.volume_number desc;
 -- ---------------------------------------------------------------------------
 insert into public.sessions (volume_number, title, event_date, venue, city, capacity, is_open)
 values
-  (1, 'Unplug Collective — Volume 1', '2025-09-23', 'Bloom Cafe',        'Bengaluru', 40, false),
-  (2, 'Unplug Collective — Volume 2', '2025-11-23', 'Bloom Cafe',        'Bengaluru', 45, false),
-  (3, 'Unplug Collective — Volume 3', '2026-01-23', 'The Courtyard',     'Bengaluru', 50, false),
-  (4, 'Unplug Collective — Volume 4', '2026-03-23', 'The Courtyard',     'Bengaluru', 55, false),
-  (5, 'Unplug Collective — Volume 5', '2026-05-23', 'Maple House',       'Bengaluru', 60, false),
-  (6, 'Unplug Collective — Volume 6', '2026-08-23', 'To be announced',   'Bengaluru', 60, true)
+  (1, 'Unplugged Collective — Volume 1', '2025-09-23', 'Bloom Cafe',        'Bengaluru', 40, false),
+  (2, 'Unplugged Collective — Volume 2', '2025-11-23', 'Bloom Cafe',        'Bengaluru', 45, false),
+  (3, 'Unplugged Collective — Volume 3', '2026-01-23', 'The Courtyard',     'Bengaluru', 50, false),
+  (4, 'Unplugged Collective — Volume 4', '2026-03-23', 'The Courtyard',     'Bengaluru', 55, false),
+  (5, 'Unplugged Collective — Volume 5', '2026-05-23', 'Maple House',       'Bengaluru', 60, false),
+  (6, 'Unplugged Collective — Volume 6', '2026-08-23', 'To be announced',   'Bengaluru', 60, true)
 on conflict (volume_number) do nothing;
