@@ -3,11 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Unplugged Collective — No rules. No filters. Just music.</title>
-<meta name="description" content="Unplugged Collective is a community of open mics, songwriters' circles, and living-room-style acoustic sessions. Bring a song, or just bring yourself.">
+<title>Unplug Collective — No rules. No filters. Just music.</title>
+<meta name="description" content="Unplug Collective is a community of open mics, songwriters' circles, and living-room-style acoustic sessions. Bring a song, or just bring yourself.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;1,400&family=Work+Sans:wght@400;500;600&family=Noto+Serif+Devanagari:wght@500;600&display=swap" rel="stylesheet">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta name="theme-color" content="#1E3A2F">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -31,7 +32,7 @@
   <div class="wrap header-inner">
     <a class="brand" href="#top">
       <svg viewBox="0 0 210 110" class="brand-mark" aria-hidden="true"><use href="#ucMark"></use></svg>
-      <span>Unplugged Collective</span>
+      <span>Unplug Collective</span>
     </a>
     <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="siteNav">
       <span class="sr-only">Menu</span>
@@ -42,8 +43,8 @@
       </svg>
     </button>
     <nav class="site-nav" id="siteNav" aria-label="Primary">
-      <a href="#sessions">Sessions</a>
       <a href="#about">About</a>
+      <a href="#sessions">Sessions</a>
       <a href="#wall">The Wall</a>
       <a href="blog.html">Blog</a>
       <a href="#register" class="nav-cta">Book a spot</a>
@@ -55,7 +56,7 @@
 
   <!-- Hero -->
   <section id="top" class="hero">
-    <img class="hero-photo" src="images/main1.jpg" alt="The Unplugged Collective community gathered together, holding a sign with the collective's mark" loading="eager">
+    <img class="hero-photo" src="images/main1.jpg" srcset="images/main1-sm.jpg 900w, images/main1.jpg 1320w" sizes="(max-width: 800px) 900px, 100vw" alt="The Unplug Collective community gathered together, holding a sign with the collective's mark" loading="eager">
     <div class="hero-scrim"></div>
 
     <div class="wrap hero-inner">
@@ -110,46 +111,44 @@
     </div>
   </section>
 
-  <!-- Upcoming sessions -->
-  <section id="sessions" class="sessions">
-    <div class="wrap">
-      <div class="section-head">
-        <h2>Upcoming session</h2>
-        <p>One room, one evening, however many songs it takes. Book your spot below — performer or listener.</p>
+  <!-- About -->
+  <section id="about" class="about">
+    <div class="wrap about-inner">
+
+      <!-- Four from The Wall, pinned up like polaroids -->
+      <div class="about-gallery" aria-label="Photos from past sessions">
+        <figure class="about-photo about-photo-a">
+          <img src="images/gallery-13.jpg" srcset="images/gallery-13-sm.jpg 760w, images/gallery-13.jpg 1320w" sizes="(max-width: 800px) 46vw, (max-width: 1100px) 26vw, 300px" alt="Two musicians harmonizing into one microphone" loading="lazy">
+          <figcaption>Off one mic, the old way.</figcaption>
+        </figure>
+        <figure class="about-photo about-photo-b">
+          <img src="images/gallery-11.jpg" srcset="images/gallery-11-sm.jpg 760w, images/gallery-11.jpg 1320w" sizes="(max-width: 800px) 46vw, (max-width: 1100px) 26vw, 300px" alt="A musician laughing mid-song while playing guitar" loading="lazy">
+          <figcaption>The laugh before the chorus.</figcaption>
+        </figure>
+        <figure class="about-photo about-photo-c">
+          <img src="images/gallery-12.jpg" srcset="images/gallery-12-sm.jpg 760w, images/gallery-12.jpg 1320w" sizes="(max-width: 800px) 46vw, (max-width: 1100px) 26vw, 300px" alt="A musician playing a bansuri flute" loading="lazy">
+          <figcaption>A bansuri between the guitars.</figcaption>
+        </figure>
+        <figure class="about-photo about-photo-d">
+          <img src="images/gallery-04.jpg" srcset="images/gallery-04-sm.jpg 760w, images/gallery-04.jpg 1320w" sizes="(max-width: 800px) 46vw, (max-width: 1100px) 26vw, 300px" alt="Musician mid-sentence, smiling, holding a guitar" loading="lazy">
+          <figcaption>Mid-story, before the song.</figcaption>
+        </figure>
       </div>
 
-      <div class="ticket">
-        <div class="ticket-stub">
-          <p class="ticket-vol-label">Volume</p>
-          <p class="ticket-vol-num">06</p>
-          <p class="ticket-stub-foot">No rules · No filters · Just music</p>
+      <div class="about-copy">
+        <p class="about-eyebrow">About</p>
+        <h2>Unplug Collective</h2>
+        <p class="about-lead">A community built around one simple idea: <em>music deserves to be heard.</em></p>
+        <p class="about-body">We create intimate spaces where musicians perform authentically, listeners genuinely listen, and meaningful connections happen through live music.</p>
+        <div class="about-nos">
+          <span>No competitions.</span>
+          <span>No distractions.</span>
+          <span>No filters.</span>
         </div>
-
-        <div class="ticket-body">
-          <div class="ticket-head">
-            <div>
-              <p class="ticket-eyebrow">Next session</p>
-              <h3>Unplugged Collective</h3>
-            </div>
-            <p class="ticket-date"><span class="ticket-day">22</span><span class="ticket-suffix">nd</span></p>
-          </div>
-
-          <p class="ticket-desc">Our sixth gathering. Acoustic sets, open ears, and a room that actually listens. Performers get a slot on the mic; listeners get the best seat in the house.</p>
-
-          <div class="ticket-tiers">
-            <div class="ticket-tier">
-              <span class="tier-name">Perform</span>
-              <span class="tier-price">&#8377;299</span>
-            </div>
-            <div class="ticket-tier">
-              <span class="tier-name">Listen</span>
-              <span class="tier-price">&#8377;199</span>
-            </div>
-          </div>
-
-          <a href="#register" class="btn btn-primary ticket-cta">Book your spot</a>
-        </div>
+        <p class="about-just">Just music.</p>
+        <a href="#wall" class="about-link">See the whole wall &rarr;</a>
       </div>
+
     </div>
   </section>
 
@@ -181,19 +180,46 @@
     </div>
   </section>
 
-  <!-- About -->
-  <section id="about" class="about">
-    <div class="wrap about-inner">
-      <p class="about-eyebrow">About</p>
-      <h2>Unplugged Collective</h2>
-      <p class="about-lead">Unplugged Collective is a community built around one simple idea: <em>music deserves to be heard.</em></p>
-      <p class="about-body">We create intimate spaces where musicians perform authentically, listeners genuinely listen, and meaningful connections happen through live music.</p>
-      <div class="about-nos">
-        <span>No competitions.</span>
-        <span>No distractions.</span>
-        <span>No filters.</span>
+  <!-- Upcoming sessions -->
+  <section id="sessions" class="sessions">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Upcoming session</h2>
+        <p>One room, one evening, however many songs it takes. Book your spot below — performer or listener.</p>
       </div>
-      <p class="about-just">Just music.</p>
+
+      <div class="ticket">
+        <div class="ticket-stub">
+          <p class="ticket-vol-label">Volume</p>
+          <p class="ticket-vol-num">06</p>
+          <p class="ticket-stub-foot">No rules · No filters · Just music</p>
+        </div>
+
+        <div class="ticket-body">
+          <div class="ticket-head">
+            <div>
+              <p class="ticket-eyebrow">Next session</p>
+              <h3>Unplug Collective</h3>
+            </div>
+            <p class="ticket-date"><span class="ticket-day">22</span><span class="ticket-suffix">nd</span></p>
+          </div>
+
+          <p class="ticket-desc">Our sixth gathering. Acoustic sets, open ears, and a room that actually listens. Performers get a slot on the mic; listeners get the best seat in the house.</p>
+
+          <div class="ticket-tiers">
+            <div class="ticket-tier">
+              <span class="tier-name">Perform</span>
+              <span class="tier-price">&#8377;299</span>
+            </div>
+            <div class="ticket-tier">
+              <span class="tier-name">Listen</span>
+              <span class="tier-price">&#8377;199</span>
+            </div>
+          </div>
+
+          <a href="#register" class="btn btn-primary ticket-cta">Book your spot</a>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -206,20 +232,20 @@
       </div>
     </div>
     <div class="wall wrap">
-      <figure class="wall-item wall-r1"><img src="images/gallery-01.jpg" alt="Musician playing acoustic guitar and singing into a microphone" loading="lazy"><figcaption>Solo, unplugged, no setlist.</figcaption></figure>
-      <figure class="wall-item wall-r2"><img src="images/gallery-02.jpg" alt="Musician in a white shirt playing acoustic guitar" loading="lazy"><figcaption>Every song sounds better with the room this quiet.</figcaption></figure>
-      <figure class="wall-item wall-r3"><img src="images/gallery-03.jpg" alt="Musician playing guitar at night as someone walks past" loading="lazy"><figcaption>Between songs, the room holds its breath.</figcaption></figure>
-      <figure class="wall-item wall-r1"><img src="images/gallery-04.jpg" alt="Musician mid-sentence, smiling, holding a guitar" loading="lazy"><figcaption>Mid-story, before the next song.</figcaption></figure>
-      <figure class="wall-item wall-r2"><img src="images/gallery-05.jpg" alt="A speaker addressing the room with a microphone" loading="lazy"><figcaption>Talking the room through it.</figcaption></figure>
-      <figure class="wall-item wall-r3"><img src="images/gallery-06.jpg" alt="A guitarist and singer performing together on a staircase" loading="lazy"><figcaption>Two voices finding the same key.</figcaption></figure>
-      <figure class="wall-item wall-r1"><img src="images/gallery-07.jpg" alt="A singer performing solo beneath a spiral staircase" loading="lazy"><figcaption>First time on this mic, first time in this room.</figcaption></figure>
-      <figure class="wall-item wall-r2"><img src="images/gallery-08.jpg" alt="Two guitarists playing side by side next to a bookshelf" loading="lazy"><figcaption>Trading verses, side by side.</figcaption></figure>
-      <figure class="wall-item wall-r3"><img src="images/gallery-09.jpg" alt="A singer performing with lyrics on a phone screen nearby" loading="lazy"><figcaption>Lyrics on a phone, heart in the room.</figcaption></figure>
-      <figure class="wall-item wall-r1"><img src="images/gallery-10.jpg" alt="A musician singing closely into a microphone while playing guitar" loading="lazy"><figcaption>Old song, new room.</figcaption></figure>
-      <figure class="wall-item wall-r2"><img src="images/gallery-11.jpg" alt="A musician laughing mid-song while playing guitar" loading="lazy"><figcaption>The best part is always the laugh before the chorus.</figcaption></figure>
-      <figure class="wall-item wall-r3"><img src="images/gallery-12.jpg" alt="A musician playing a bansuri flute" loading="lazy"><figcaption>A bansuri between the guitars.</figcaption></figure>
-      <figure class="wall-item wall-r1"><img src="images/gallery-13.jpg" alt="Two musicians harmonizing into one microphone" loading="lazy"><figcaption>Harmonizing off one mic, the old-fashioned way.</figcaption></figure>
-      <figure class="wall-item wall-r2"><img src="images/gallery-14.jpg" alt="Two musicians backstage near the Unplugged Collective sign" loading="lazy"><figcaption>Backstage, before the next set.</figcaption></figure>
+      <figure class="wall-item wall-r1"><img src="images/gallery-01.jpg" srcset="images/gallery-01-sm.jpg 760w, images/gallery-01.jpg 1320w" sizes="(max-width: 460px) 92vw, (max-width: 800px) 46vw, (max-width: 1000px) 31vw, 260px" alt="Musician playing acoustic guitar and singing into a microphone" loading="lazy"><figcaption>Solo, unplugged, no setlist.</figcaption></figure>
+      <figure class="wall-item wall-r2"><img src="images/gallery-02.jpg" srcset="images/gallery-02-sm.jpg 760w, images/gallery-02.jpg 1320w" sizes="(max-width: 460px) 92vw, (max-width: 800px) 46vw, (max-width: 1000px) 31vw, 260px" alt="Musician in a white shirt playing acoustic guitar" loading="lazy"><figcaption>Every song sounds better with the room this quiet.</figcaption></figure>
+      <figure class="wall-item wall-r3"><img src="images/gallery-03.jpg" srcset="images/gallery-03-sm.jpg 760w, images/gallery-03.jpg 1320w" sizes="(max-width: 460px) 92vw, (max-width: 800px) 46vw, (max-width: 1000px) 31vw, 260px" alt="Musician playing guitar at night as someone walks past" loading="lazy"><figcaption>Between songs, the room holds its breath.</figcaption></figure>
+      <figure class="wall-item wall-r1"><img src="images/gallery-04.jpg" srcset="images/gallery-04-sm.jpg 760w, images/gallery-04.jpg 1320w" sizes="(max-width: 460px) 92vw, (max-width: 800px) 46vw, (max-width: 1000px) 31vw, 260px" alt="Musician mid-sentence, smiling, holding a guitar" loading="lazy"><figcaption>Mid-story, before the next song.</figcaption></figure>
+      <figure class="wall-item wall-r2"><img src="images/gallery-05.jpg" srcset="images/gallery-05-sm.jpg 760w, images/gallery-05.jpg 1320w" sizes="(max-width: 460px) 92vw, (max-width: 800px) 46vw, (max-width: 1000px) 31vw, 260px" alt="A speaker addressing the room with a microphone" loading="lazy"><figcaption>Talking the room through it.</figcaption></figure>
+      <figure class="wall-item wall-r3"><img src="images/gallery-06.jpg" srcset="images/gallery-06-sm.jpg 760w, images/gallery-06.jpg 1320w" sizes="(max-width: 460px) 92vw, (max-width: 800px) 46vw, (max-width: 1000px) 31vw, 260px" alt="A guitarist and singer performing together on a staircase" loading="lazy"><figcaption>Two voices finding the same key.</figcaption></figure>
+      <figure class="wall-item wall-r1"><img src="images/gallery-07.jpg" srcset="images/gallery-07-sm.jpg 760w, images/gallery-07.jpg 1320w" sizes="(max-width: 460px) 92vw, (max-width: 800px) 46vw, (max-width: 1000px) 31vw, 260px" alt="A singer performing solo beneath a spiral staircase" loading="lazy"><figcaption>First time on this mic, first time in this room.</figcaption></figure>
+      <figure class="wall-item wall-r2"><img src="images/gallery-08.jpg" srcset="images/gallery-08-sm.jpg 760w, images/gallery-08.jpg 1320w" sizes="(max-width: 460px) 92vw, (max-width: 800px) 46vw, (max-width: 1000px) 31vw, 260px" alt="Two guitarists playing side by side next to a bookshelf" loading="lazy"><figcaption>Trading verses, side by side.</figcaption></figure>
+      <figure class="wall-item wall-r3"><img src="images/gallery-09.jpg" srcset="images/gallery-09-sm.jpg 760w, images/gallery-09.jpg 1320w" sizes="(max-width: 460px) 92vw, (max-width: 800px) 46vw, (max-width: 1000px) 31vw, 260px" alt="A singer performing with lyrics on a phone screen nearby" loading="lazy"><figcaption>Lyrics on a phone, heart in the room.</figcaption></figure>
+      <figure class="wall-item wall-r1"><img src="images/gallery-10.jpg" srcset="images/gallery-10-sm.jpg 760w, images/gallery-10.jpg 1320w" sizes="(max-width: 460px) 92vw, (max-width: 800px) 46vw, (max-width: 1000px) 31vw, 260px" alt="A musician singing closely into a microphone while playing guitar" loading="lazy"><figcaption>Old song, new room.</figcaption></figure>
+      <figure class="wall-item wall-r2"><img src="images/gallery-11.jpg" srcset="images/gallery-11-sm.jpg 760w, images/gallery-11.jpg 1320w" sizes="(max-width: 460px) 92vw, (max-width: 800px) 46vw, (max-width: 1000px) 31vw, 260px" alt="A musician laughing mid-song while playing guitar" loading="lazy"><figcaption>The best part is always the laugh before the chorus.</figcaption></figure>
+      <figure class="wall-item wall-r3"><img src="images/gallery-12.jpg" srcset="images/gallery-12-sm.jpg 760w, images/gallery-12.jpg 1320w" sizes="(max-width: 460px) 92vw, (max-width: 800px) 46vw, (max-width: 1000px) 31vw, 260px" alt="A musician playing a bansuri flute" loading="lazy"><figcaption>A bansuri between the guitars.</figcaption></figure>
+      <figure class="wall-item wall-r1"><img src="images/gallery-13.jpg" srcset="images/gallery-13-sm.jpg 760w, images/gallery-13.jpg 1320w" sizes="(max-width: 460px) 92vw, (max-width: 800px) 46vw, (max-width: 1000px) 31vw, 260px" alt="Two musicians harmonizing into one microphone" loading="lazy"><figcaption>Harmonizing off one mic, the old-fashioned way.</figcaption></figure>
+      <figure class="wall-item wall-r2"><img src="images/gallery-14.jpg" srcset="images/gallery-14-sm.jpg 760w, images/gallery-14.jpg 1320w" sizes="(max-width: 460px) 92vw, (max-width: 800px) 46vw, (max-width: 1000px) 31vw, 260px" alt="Two musicians backstage near the Unplug Collective sign" loading="lazy"><figcaption>Backstage, before the next set.</figcaption></figure>
     </div>
   </section>
 
@@ -276,24 +302,24 @@
         <div class="field-grid">
           <div class="field">
             <label class="field-label" for="fullName">Full name</label>
-            <input type="text" id="fullName" name="fullName" placeholder="Your name" required>
+            <input type="text" id="fullName" name="fullName" placeholder="Your name" autocomplete="name" autocapitalize="words" required>
           </div>
 
           <div class="field">
             <label class="field-label" for="age">Age</label>
-            <input type="number" id="age" name="age" min="10" max="100" placeholder="21" required>
+            <input type="number" id="age" name="age" min="10" max="100" placeholder="21" inputmode="numeric" required>
           </div>
 
           <div class="field">
             <label class="field-label" for="phone">Phone number</label>
-            <input type="tel" id="phone" name="phone" inputmode="numeric" maxlength="10" placeholder="10-digit number" required>
+            <input type="tel" id="phone" name="phone" inputmode="numeric" autocomplete="tel-national" maxlength="10" placeholder="10-digit number" required>
           </div>
 
           <div class="field">
             <label class="field-label" for="instagram">Instagram handle</label>
             <div class="input-prefix">
               <span>@</span>
-              <input type="text" id="instagram" name="instagram" placeholder="yourhandle" required>
+              <input type="text" id="instagram" name="instagram" placeholder="yourhandle" autocapitalize="none" autocorrect="off" spellcheck="false" required>
             </div>
           </div>
         </div>
@@ -311,7 +337,7 @@
 </main>
 
 <footer class="site-footer">
-  <img class="footer-photo" src="images/main2.jpg" alt="The Unplugged Collective community gathered on a staircase" loading="lazy">
+  <img class="footer-photo" src="images/main2.jpg" srcset="images/main2-sm.jpg 900w, images/main2.jpg 1320w" sizes="(max-width: 800px) 900px, 100vw" alt="The Unplug Collective community gathered on a staircase" loading="lazy">
   <div class="footer-scrim"></div>
 
   <!-- Shimmer traced over the three figures at the centre of the photo.
@@ -356,17 +382,17 @@
       <div class="footer-col footer-about">
         <div class="footer-brand">
           <svg viewBox="0 0 210 110" class="footer-mark" aria-hidden="true"><use href="#ucMark"></use></svg>
-          <p class="footer-name">Unplugged Collective</p>
+          <p class="footer-name">Unplug Collective</p>
         </div>
         <p>Intimate spaces where musicians perform authentically and listeners genuinely listen. No competitions. No distractions. No filters.</p>
       </div>
 
       <div class="footer-col">
         <h3>Explore</h3>
-        <a href="#sessions">Sessions</a>
-        <a href="#how-it-works">How it works</a>
-        <a href="#wall">The Wall</a>
         <a href="#about">About</a>
+        <a href="#how-it-works">How it works</a>
+        <a href="#sessions">Sessions</a>
+        <a href="#wall">The Wall</a>
       </div>
 
       <div class="footer-col">
@@ -386,7 +412,7 @@
     </div>
 
     <div class="footer-bottom">
-      <p class="footer-copy">&copy; 2026 Unplugged Collective. All rights reserved.</p>
+      <p class="footer-copy">&copy; 2026 Unplug Collective. All rights reserved.</p>
       <div class="footer-social">
         <a href="https://instagram.com/unplugcollective" target="_blank" rel="noopener">Instagram</a>
         <a href="mailto:hello@unplugcollective.in">Email</a>
@@ -401,7 +427,7 @@
   <img class="lightbox-img" id="lightboxImg" alt="">
 </div>
 
-<script src="script.js"></script>
+<script type="module" src="/script.js"></script>
 <script type="module" src="/src/register.js"></script>
 <script type="module" src="/src/braino.js"></script>
 </body>

@@ -34,7 +34,7 @@ async function sb(url, key, path) {
 const INR = (n) => `₹${Number(n || 0)}`;
 
 const EVERGREEN = [
-  'Unplugged Collective is a community of open mics, songwriters\' circles and acoustic sessions.',
+  'Unplug Collective is a community of open mics, songwriters\' circles and acoustic sessions.',
   'The idea: music deserves to be heard. Intimate rooms where musicians perform authentically and listeners genuinely listen. No competitions, no distractions, no filters.',
   'How a session works: sign-ups open thirty minutes before the first set, first come first served. Each performer gets a fifteen-minute slot — two or three songs, unplugged. Covers, originals and half-finished ideas are all welcome. There are no auditions.',
   'Two ways to book: Performer (₹299) gets a slot on the mic, a sound check before doors, and photos from the night. Listener (₹199) gets entry to the full session and reserved seating.',

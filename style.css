@@ -1,4 +1,4 @@
-/* Unplugged Collective — brand tokens
+/* Unplug Collective — brand tokens
    Forest Green #1E3A2F (ink/primary) · Cream #F4EEE1 (ground)
    Terracotta #C1622D (accent/CTA) · Sage Tint #DCE0D4 (soft fills) · Clay Tint #E9C3AC (accent tint) */
 
@@ -18,10 +18,19 @@
 
 * { box-sizing: border-box; }
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  /* iOS inflates text in landscape unless this is pinned */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
 
 /* Anchor targets clear the sticky header */
 section[id] { scroll-margin-top: 96px; }
+
+/* The wall photos are rotated, which spills real scrollable width on narrow
+   screens. `clip` (not `hidden`) stops that without breaking the sticky header. */
+html, body { overflow-x: clip; }
 
 body {
   margin: 0;
@@ -152,6 +161,8 @@ h1, h2, h3 {
   padding: 14px 28px;
   border-radius: 999px;
   border: 2px solid var(--ink);
+  min-height: 46px;
+  -webkit-tap-highlight-color: rgba(193,98,45,0.18);
 }
 
 .btn-primary {
@@ -681,15 +692,79 @@ h1, h2, h3 {
   margin: 0;
 }
 
-/* About */
+/* About — copy on the right, four polaroids from The Wall on the left */
 .about {
-  padding: 88px 0;
+  padding: 96px 0;
   background: var(--ink);
   color: var(--ground);
-  text-align: center;
 }
 
-.about-inner { max-width: 720px; margin: 0 auto; }
+.about-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1.02fr) minmax(0, 1fr);
+  gap: 60px;
+  align-items: center;
+}
+
+/* ---- Polaroid cluster ---- */
+.about-gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+  align-items: start;
+  /* headroom for the tilt and the drop shadows */
+  padding: 16px 6px 34px;
+}
+
+/* The right-hand column hangs lower, the way photos actually get pinned up */
+.about-photo-b,
+.about-photo-d { margin-top: 44px; }
+
+.about-photo {
+  position: relative;
+  margin: 0;
+  background: var(--white);
+  padding: 11px 11px 42px;
+  box-shadow: 0 16px 34px rgba(8,20,15,0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-photo img {
+  display: block;
+  width: 100%;
+  /* Square crop whatever the source aspect — that's what makes it a polaroid */
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.about-photo figcaption {
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: 13px;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 13px;
+  line-height: 1.3;
+  text-align: center;
+  color: var(--muted);
+}
+
+.about-photo-a { transform: rotate(-3.2deg); }
+.about-photo-b { transform: rotate(2.4deg); }
+.about-photo-c { transform: rotate(1.7deg); }
+.about-photo-d { transform: rotate(-2deg); }
+
+@media (hover: hover) {
+  .about-photo:hover {
+    transform: rotate(0deg) scale(1.04);
+    box-shadow: 0 24px 46px rgba(8,20,15,0.62);
+    z-index: 2;
+  }
+}
+
+/* ---- Copy ---- */
+.about-copy { max-width: 520px; }
 
 .about-eyebrow {
   font-size: 12px;
@@ -701,8 +776,9 @@ h1, h2, h3 {
 
 .about h2 {
   color: var(--ground);
-  font-size: 42px;
-  margin: 0 0 24px;
+  font-size: 46px;
+  line-height: 1.05;
+  margin: 0 0 22px;
 }
 
 .about-lead {
@@ -718,15 +794,14 @@ h1, h2, h3 {
   font-size: 17px;
   line-height: 1.7;
   color: #ded7c8;
-  margin: 0 0 36px;
+  margin: 0 0 30px;
 }
 
 .about-nos {
   display: flex;
-  justify-content: center;
-  gap: 14px;
+  gap: 12px;
   flex-wrap: wrap;
-  margin-bottom: 28px;
+  margin-bottom: 26px;
 }
 
 .about-nos span {
@@ -740,12 +815,25 @@ h1, h2, h3 {
 
 .about-just {
   font-family: var(--font-serif);
-  font-size: 52px;
+  font-size: 54px;
   font-weight: 600;
   color: var(--ground);
   margin: 0;
   line-height: 1;
 }
+
+.about-link {
+  display: inline-block;
+  margin-top: 22px;
+  color: var(--clay);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  text-decoration: none;
+  border-bottom: 1.5px solid rgba(233,195,172,0.45);
+  padding-bottom: 3px;
+}
+.about-link:hover { color: var(--ground); border-bottom-color: var(--ground); }
 
 /* Register */
 .register { padding: 88px 0; background: var(--ground); }
@@ -791,10 +879,14 @@ h1, h2, h3 {
   transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
 }
 
-.tier-card:hover .tier-card-inner {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 26px rgba(30,58,47,0.16);
+@media (hover: hover) {
+  .tier-card:hover .tier-card-inner {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 26px rgba(30,58,47,0.16);
+  }
 }
+/* Touch gets a press state instead, which can't latch. */
+.tier-card:active .tier-card-inner { transform: scale(0.99); }
 
 .tier-card-top {
   display: flex;
@@ -1074,10 +1166,12 @@ h1, h2, h3 {
 .wall-r2 { transform: rotate(1.5deg); }
 .wall-r3 { transform: rotate(-1deg); }
 
-.wall-item:hover {
-  transform: rotate(0deg) scale(1.035);
-  box-shadow: 0 18px 34px rgba(30,58,47,0.3);
-  z-index: 2;
+@media (hover: hover) {
+  .wall-item:hover {
+    transform: rotate(0deg) scale(1.035);
+    box-shadow: 0 18px 34px rgba(30,58,47,0.3);
+    z-index: 2;
+  }
 }
 
 /* Lightbox */
@@ -1292,9 +1386,55 @@ h1, h2, h3 {
 }
 .footer-social a:hover { color: var(--ground); }
 
-/* Responsive */
+/* =========================================================================
+   Responsive
+   Phones are the primary surface here, so the small breakpoints get the
+   detail work — not just a stack-everything fallback.
+   1000 tablet · 800 mobile nav + single column · 560 small · 380 very small
+   ========================================================================= */
+
+/* ---------------------------- Tablet ------------------------------------ */
+@media (max-width: 1000px) {
+  .wrap { padding: 0 22px; }
+
+  .hero { padding: 116px 0 88px; min-height: min(88svh, 780px); }
+  .hero-seal { top: 92px; width: clamp(104px, 13vw, 150px); }
+
+  .ticket { grid-template-columns: 200px 1fr; }
+  .wall { column-count: 3; }
+  .footer-cols { grid-template-columns: 1.5fr 1fr 1fr; gap: 32px 26px; }
+
+  .about-inner { gap: 40px; }
+  .about-gallery { gap: 16px; }
+  .about-photo-b, .about-photo-d { margin-top: 32px; }
+  .about h2 { font-size: 38px; }
+  .about-lead { font-size: 23px; }
+  .about-just { font-size: 46px; }
+}
+
+/* ---------------------------- Mobile ------------------------------------ */
 @media (max-width: 800px) {
-  .nav-toggle { display: inline-flex; align-items: center; }
+
+  /* Notch / curved-edge safety on the two elements that run edge to edge */
+  .wrap {
+    padding-left: max(20px, env(safe-area-inset-left));
+    padding-right: max(20px, env(safe-area-inset-right));
+  }
+
+  section[id] { scroll-margin-top: 78px; }
+
+  /* ---- Header + drawer ---- */
+  .header-inner { padding: 12px max(20px, env(safe-area-inset-left)); }
+  .brand { font-size: 17px; gap: 10px; padding: 8px 0; }
+  .brand-mark { width: 34px; }
+
+  .nav-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    min-height: 44px;
+  }
 
   .site-nav {
     position: absolute;
@@ -1302,64 +1442,247 @@ h1, h2, h3 {
     left: 0;
     right: 0;
     flex-direction: column;
-    align-items: flex-start;
-    gap: 4px;
+    align-items: stretch;
+    gap: 0;
     background: var(--ground);
     border-bottom: 2px solid var(--ink);
-    padding: 12px 24px 20px;
+    box-shadow: 0 14px 26px rgba(30,58,47,0.16);
+    padding: 4px 20px 18px;
+    /* A short phone in landscape can't show the whole drawer otherwise */
+    max-height: calc(100svh - 68px);
+    overflow-y: auto;
     display: none;
   }
   .site-nav.is-open { display: flex; }
-  .site-nav a { padding: 8px 0; }
-  .site-nav a.nav-cta { margin-top: 8px; }
+  .site-nav a {
+    padding: 14px 2px;
+    font-size: 16px;
+    border-bottom: 1px solid rgba(30,58,47,0.12);
+  }
+  .site-nav a:last-of-type { border-bottom: none; }
+  .site-nav a.nav-cta {
+    margin-top: 14px;
+    text-align: center;
+    padding: 14px 18px;
+    border-bottom: none;
+  }
 
+  /* ---- Hero ---- */
   .hero {
     min-height: 0;
-    padding: 108px 0 84px;
+    padding: 104px 0 82px;
   }
   /* The mark already sits in the header at this width — a second one crowds the type */
   .hero-seal { display: none; }
-  .hero-title { font-size: clamp(34px, 10vw, 46px); max-width: none; }
-  .hero-sub { font-size: 16px; }
-  .hero-actions { margin-bottom: 34px; }
+
+  .hero-badge {
+    font-size: 11.5px;
+    letter-spacing: 0.9px;
+    padding: 11px 16px 11px 14px;
+    margin-bottom: 22px;
+  }
+  .hero-title { font-size: clamp(34px, 9.6vw, 46px); max-width: none; }
+  .hero-sub { font-size: 16px; max-width: none; margin-bottom: 30px; }
+  .hero-actions { gap: 12px; margin-bottom: 34px; }
   .hero-actions .btn { flex: 1 1 100%; text-align: center; }
-  .hero-facts { gap: 24px; }
+  .hero-facts { gap: 20px 30px; padding-top: 22px; max-width: none; }
+  .hero-facts dt { font-size: 10px; letter-spacing: 1.8px; }
   .hero-facts dd { font-size: 21px; }
   .hero-marquee { padding: 10px 0; }
   .hero-marquee-track span { font-size: 15px; }
 
-  .ticket { grid-template-columns: 1fr; }
-  .ticket-stub { padding: 28px; flex-direction: row; gap: 16px; align-items: baseline; justify-content: center; }
+  /* ---- Section rhythm: desktop's 72–88px is a lot of dead scroll on a phone ---- */
+  .voice { padding: 44px 0; }
+  .voice-quote { font-size: 20px; line-height: 1.55; }
+  .voice-attr { font-size: 11px; letter-spacing: 1.6px; }
+
+  .section-head { margin-bottom: 30px; }
+  .section-head h2 { font-size: 28px; }
+  .section-head p { font-size: 15px; }
+
+  .sessions,
+  .how,
+  .community { padding: 56px 0; }
+  .about { padding: 60px 0; }
+  .register { padding: 60px 0; }
+  .register-head { margin-bottom: 30px; }
+  .wall-section { padding: 56px 0 64px; }
+
+  /* ---- Ticket ---- */
+  .ticket {
+    grid-template-columns: 1fr;
+    box-shadow: 7px 7px 0 rgba(30,58,47,0.12);
+  }
+  .ticket-stub { padding: 24px 28px; flex-direction: row; gap: 16px; align-items: baseline; justify-content: center; }
   .ticket-stub::after { top: auto; bottom: 0; left: 12px; right: 12px; border-right: none; border-bottom: 2px dashed rgba(244,238,225,0.45); }
-  .ticket-vol-num { font-size: 60px; margin: 0; }
+  .ticket-vol-num { font-size: 56px; margin: 0; }
   .ticket-stub-foot { display: none; }
-  .ticket-body { padding: 28px 24px; }
+  .ticket-body { padding: 26px 22px; }
   .ticket-body h3 { font-size: 26px; }
-  .ticket-head { flex-direction: column; gap: 10px; }
-  .ticket-day { font-size: 46px; }
+  .ticket-head { flex-direction: row; align-items: flex-start; justify-content: space-between; gap: 12px; }
+  .ticket-day { font-size: 44px; }
+  .ticket-desc { font-size: 15px; }
   .ticket-cta { width: 100%; text-align: center; }
 
-  .footer-cols { grid-template-columns: 1fr 1fr; gap: 28px; }
-  .tier-cards { grid-template-columns: 1fr; }
-  .field-grid { grid-template-columns: 1fr; }
+  /* ---- How it works ---- */
+  .how-steps { grid-template-columns: 1fr; gap: 22px; }
+  .how-steps li { padding-top: 16px; }
+  .how-steps h3 { font-size: 20px; }
+
+  /* ---- About ---- */
+  .about-inner { grid-template-columns: 1fr; gap: 34px; }
+  .about-copy { max-width: none; }
+  .about-gallery { gap: 13px; padding: 10px 4px 22px; }
+  .about-photo-b, .about-photo-d { margin-top: 26px; }
+  .about-photo { padding: 8px 8px 32px; box-shadow: 0 10px 24px rgba(8,20,15,0.45); }
+  .about-photo figcaption { left: 9px; right: 9px; bottom: 10px; font-size: 11.5px; }
+  .about-link { margin-top: 14px; font-size: 13.5px; padding: 10px 0 8px; }
   .about h2 { font-size: 32px; }
   .about-lead { font-size: 21px; }
+  .about-body { font-size: 16px; margin-bottom: 28px; }
+  .about-nos { gap: 10px; }
+  .about-nos span { padding: 7px 16px; font-size: 13px; }
   .about-just { font-size: 40px; }
-  .register-actions { flex-direction: column; align-items: stretch; }
+
+  /* ---- Register form ---- */
+  .tier-cards { grid-template-columns: 1fr; gap: 14px; }
+  .tier-fieldset { margin-bottom: 28px; }
+  .tier-card-inner { padding: 22px 20px 20px; }
+  .tier-card-price { font-size: 36px; }
+
+  .field-grid { grid-template-columns: 1fr; gap: 16px; margin-bottom: 26px; }
+  .field input { padding: 14px 15px; }
+  /* 16px is the threshold — below it iOS zooms the whole page on focus and
+     never zooms back out. Applies to every text input on the site. */
+  .field input,
+  .input-prefix input,
+  .input-prefix span,
+  .join-form input { font-size: 16px; }
+
+  .register-actions { flex-direction: column; align-items: stretch; gap: 14px; }
   .register-actions .btn { width: 100%; text-align: center; }
   .register-total { text-align: center; }
-  .session-grid { grid-template-columns: 1fr; }
-  .how-steps { grid-template-columns: 1fr; gap: 24px; }
+
   .community-grid { grid-template-columns: 1fr; }
-  .wall { column-count: 2; column-gap: 16px; }
-  .wall-item { margin-bottom: 16px; }
-  .footer-inner { flex-direction: column; align-items: flex-start; }
+  .session-grid { grid-template-columns: 1fr; }
+
+  /* ---- The Wall ---- */
+  .wall { column-count: 2; column-gap: 14px; }
+  .wall-item { margin-bottom: 14px; padding: 7px 7px 32px; }
+  .wall-item figcaption { left: 8px; right: 8px; bottom: 10px; font-size: 11.5px; }
+  /* Softer tilt — at phone width the desktop angle clips the gutters */
+  .wall-r1 { transform: rotate(-1.2deg); }
+  .wall-r2 { transform: rotate(0.9deg); }
+  .wall-r3 { transform: rotate(-0.6deg); }
+
+  /* ---- Lightbox ---- */
+  .lightbox { padding: 14px; }
+  .lightbox-close {
+    top: max(8px, env(safe-area-inset-top));
+    right: 10px;
+    width: 44px;
+    height: 44px;
+    font-size: 34px;
+  }
+
+  /* ---- Blog ---- */
+  .blog-hero { padding: 56px 0 40px; }
+  .blog-hero h1 { font-size: 34px; }
+  .blog-hero-sub { font-size: 16px; }
+  .blog-body { padding: 52px 0 64px; }
+  .blog-empty { padding: 38px 24px; }
+  .blog-empty h2 { font-size: 24px; }
+  .blog-empty .btn { width: 100%; text-align: center; }
+
+  /* ---- Footer ---- */
+  .site-footer { padding: 60px 0 0; }
+  .footer-top { gap: 20px; padding-bottom: 26px; }
+  .footer-top h2 { font-size: 26px; }
+  .footer-top p { font-size: 14.5px; }
+  .footer-top .btn { width: 100%; text-align: center; }
+  .footer-cols {
+    grid-template-columns: 1fr 1fr;
+    gap: 28px 20px;
+    padding: 32px 0 36px;
+  }
+  /* The blurb reads badly in a half-width column — give it the full row */
+  .footer-about { grid-column: 1 / -1; }
+  .footer-about p { max-width: none; }
+  .footer-col h3 { margin-bottom: 8px; }
+  .footer-col a { padding: 9px 0; margin-bottom: 0; }
+  .footer-social { gap: 22px; }
+  .footer-social a { padding: 10px 0; }
+  .footer-inner,
+  .footer-bottom { flex-direction: column; align-items: flex-start; gap: 12px; }
+  .site-footer .wrap { padding-bottom: env(safe-area-inset-bottom); }
 }
 
-@media (max-width: 1000px) and (min-width: 801px) {
-  .wall { column-count: 3; }
+/* Landscape phones: vertical space is the scarce axis, not horizontal */
+@media (max-width: 900px) and (orientation: landscape) and (max-height: 520px) {
+  .hero { padding: 84px 0 68px; }
+  .hero-title { font-size: clamp(28px, 5.4vw, 38px); }
+  .hero-sub { margin-bottom: 22px; }
+  .hero-actions { margin-bottom: 24px; }
+  .hero-actions .btn { flex: 0 1 auto; }
+  .about { padding: 48px 0; }
 }
 
-@media (max-width: 480px) {
+/* -------------------------- Small phones -------------------------------- */
+@media (max-width: 560px) {
+  .hero-title { font-size: clamp(31px, 9.2vw, 40px); }
+  .hero-facts { gap: 16px 24px; }
+  .hero-facts dd { font-size: 19px; }
+
+  .section-head h2 { font-size: 25px; }
+  .voice-quote { font-size: 18.5px; }
+
+  .ticket-vol-num { font-size: 48px; }
+  .ticket-body h3 { font-size: 23px; }
+  .ticket-day { font-size: 38px; }
+  .ticket-tiers { gap: 12px; }
+
+  .about h2 { font-size: 28px; }
+  .about-lead { font-size: 19px; }
+  .about-just { font-size: 34px; }
+
+  .tier-card-price { font-size: 32px; }
+  .tier-card-name { font-size: 21px; }
+
+  .blog-hero h1 { font-size: 29px; }
+  .footer-top h2 { font-size: 23px; }
+}
+
+@media (max-width: 460px) {
+  /* One column reads better than two thumbnails too small to see faces in */
   .wall { column-count: 1; }
+  .wall-item { max-width: 380px; margin-left: auto; margin-right: auto; }
+}
+
+/* ------------------------ Very small phones ----------------------------- */
+@media (max-width: 380px) {
+  .wrap {
+    padding-left: max(16px, env(safe-area-inset-left));
+    padding-right: max(16px, env(safe-area-inset-right));
+  }
+  .header-inner { padding: 11px max(16px, env(safe-area-inset-left)); }
+  .site-nav { padding-left: 16px; padding-right: 16px; }
+  .brand { font-size: 15.5px; }
+  .brand-mark { width: 30px; }
+
+  .hero { padding: 96px 0 76px; }
+  .hero-badge { font-size: 10.5px; padding: 7px 13px 7px 11px; }
+  .hero-marquee-track span { font-size: 13.5px; }
+
+  .btn { padding: 13px 22px; font-size: 14.5px; }
+
+  .ticket-body { padding: 22px 18px; }
+  .tier-card-inner { padding: 20px 17px 18px; }
+
+  .about-just { font-size: 30px; }
+  .about-gallery { gap: 10px; }
+  .about-photo { padding: 6px 6px 27px; }
+  .about-photo figcaption { left: 7px; right: 7px; bottom: 8px; font-size: 10.5px; }
+  .about-photo-b, .about-photo-d { margin-top: 20px; }
+  .footer-cols { gap: 24px 16px; }
+  .footer-col a, .footer-col p { font-size: 14px; }
 }
