@@ -1531,7 +1531,9 @@ h1, h2, h3 {
 
   /* ---- About ---- */
   .about-inner { grid-template-columns: 1fr; gap: 34px; }
-  .about-copy { max-width: none; }
+  /* Stacked, the copy leads and the polaroids follow — the reverse of the
+     desktop two-up, where the photos sit in the left column. */
+  .about-copy { max-width: none; order: -1; }
   .about-gallery { gap: 13px; padding: 10px 4px 22px; }
   .about-photo-b, .about-photo-d { margin-top: 26px; }
   .about-photo { padding: 8px 8px 32px; box-shadow: 0 10px 24px rgba(8,20,15,0.45); }
